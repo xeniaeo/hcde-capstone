@@ -1,0 +1,5 @@
+- [openai-cookbook](https://github.com/openai/openai-cookbook): Examples and guides for using the OpenAI API.
+- [ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web): One-Click to deploy your own ChatGPT web UI.
+- [ChatGPT-Wrapper-For-Unity](https://github.com/GraesonB/ChatGPT-Wrapper-For-Unity)
+- [Awesome ChatGPT](https://github.com/stars/acheong08/lists/awesome-chatgpt): A list of ChatGPT implementations.
+- [ChatdollKit](https://github.com/uezo/ChatdollKit): 3D virtual assistant SDK that enables you to make your 3D model into a voice-enabled chatbot.
