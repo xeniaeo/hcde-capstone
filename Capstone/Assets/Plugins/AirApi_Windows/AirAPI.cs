@@ -35,6 +35,8 @@ public class AirAPI : MonoBehaviour
     float[] QuaternionArray = new float[4];
     IntPtr QuaternionPtr;
 
+    public bool gyroEnabled = false;
+
     void Start()
     {
         // Start the connection
@@ -51,18 +53,21 @@ public class AirAPI : MonoBehaviour
 
     void Update()
     {
-        // Get array data from memory
-        // QuaternionPtr = GetQuaternion();
-        // Marshal.Copy(QuaternionPtr, QuaternionArray, 0, 4);
+        if (gyroEnabled)
+        {
+            // Get array data from memory
+            // QuaternionPtr = GetQuaternion();
+            // Marshal.Copy(QuaternionPtr, QuaternionArray, 0, 4);
 
-        EulerPtr = GetEuler();
-        Marshal.Copy(EulerPtr, EulerArray, 0, 3);
+            EulerPtr = GetEuler();
+            Marshal.Copy(EulerPtr, EulerArray, 0, 3);
 
-        // Print data
-        // Debug.Log("Quaternion: " + QuaternionArray[0] + " " + QuaternionArray[1] + " " + QuaternionArray[2] + " " + QuaternionArray[3]);
-        // Debug.Log("Euler: " + EulerArray[0] + " " + EulerArray[1] + " " + EulerArray[2]);
+            // Print data
+            // Debug.Log("Quaternion: " + QuaternionArray[0] + " " + QuaternionArray[1] + " " + QuaternionArray[2] + " " + QuaternionArray[3]);
+            // Debug.Log("Euler: " + EulerArray[0] + " " + EulerArray[1] + " " + EulerArray[2]);
 
-        Quaternion localRotation = Quaternion.Euler((-EulerArray[1]) + 90.0f, (-EulerArray[2]) + 90.0f, -EulerArray[0]);
-        this.transform.rotation = localRotation;
+            Quaternion localRotation = Quaternion.Euler((-EulerArray[1]) + 90.0f, -EulerArray[2], -EulerArray[0]);
+            this.transform.rotation = localRotation;
+        }
     }
 }
