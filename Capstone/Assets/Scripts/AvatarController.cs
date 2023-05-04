@@ -5,6 +5,7 @@ using UnityEngine;
 public class AvatarController : MonoBehaviour
 {
     public GameObject Avatar;
+    public GameObject AvatarModel;
     public GameObject ChatScrollView;
     public GameObject InputPanel;
 
@@ -42,7 +43,8 @@ public class AvatarController : MonoBehaviour
 
     public void StartConversation()
     {
-        Avatar.SetActive(true);
+        // Avatar.SetActive(true);
+        AvatarModel.SetActive(true); // to-do: need to fix this
         ChatScrollView.SetActive(true);
         InputPanel.SetActive(true);
 
@@ -51,7 +53,8 @@ public class AvatarController : MonoBehaviour
 
     public void EndConversation()
     {
-        Avatar.SetActive(false);
+        // Avatar.SetActive(false);
+        AvatarModel.SetActive(false);
         ChatScrollView.SetActive(false);
         InputPanel.SetActive(false);
 
