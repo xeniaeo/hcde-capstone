@@ -13,7 +13,7 @@ public class InterfaceController : MonoBehaviour
     // Screens for student interface
     public List<GameObject> studentScreens = new List<GameObject>();
     private bool isStudentScreenEnabled = false;
-    private int currentStudentScreenIndex = 0;
+    private int currentStudentScreenIndex = -1;
 
     // Screens for teacher interface
     public List<GameObject> teacherScreens = new List<GameObject>();
@@ -42,10 +42,14 @@ public class InterfaceController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 studentScreens[currentStudentScreenIndex].SetActive(false);
-                if (currentStudentScreenIndex != 0)
+                if (currentStudentScreenIndex != -1)
                 {
                     currentStudentScreenIndex -= 1;
                     studentScreens[currentStudentScreenIndex].SetActive(true);
+                }
+                else if (currentStudentScreenIndex == -1 && AvatarController.Instance.isHavingConversation)
+                {
+                    AvatarController.Instance.EndConversation();
                 }
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -56,6 +60,11 @@ public class InterfaceController : MonoBehaviour
                     currentStudentScreenIndex += 1;
                     studentScreens[currentStudentScreenIndex].SetActive(true);
                 }
+                else if (currentStudentScreenIndex == studentScreens.Count - 1)
+                {
+                    currentStudentScreenIndex = -1;
+                    AvatarController.Instance.EndConversation();
+                }
             }
         }
         // control teacher screens
@@ -64,7 +73,7 @@ public class InterfaceController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 teacherScreens[currentTeacherScreenIndex].SetActive(false);
-                if (currentTeacherScreenIndex != 0)
+                if (currentTeacherScreenIndex != -1)
                 {
                     currentTeacherScreenIndex -= 1;
                     teacherScreens[currentTeacherScreenIndex].SetActive(true);
@@ -78,6 +87,10 @@ public class InterfaceController : MonoBehaviour
                     currentTeacherScreenIndex += 1;
                     teacherScreens[currentTeacherScreenIndex].SetActive(true);
                 }
+                else if (currentTeacherScreenIndex == teacherScreens.Count - 1)
+                {
+                    currentTeacherScreenIndex = -1;
+                }
             }
         }
     }
@@ -89,14 +102,14 @@ public class InterfaceController : MonoBehaviour
             screen.SetActive(false);
         }
         isStudentScreenEnabled = false;
-        currentStudentScreenIndex = 0;
+        currentStudentScreenIndex = -1;
 
         foreach (GameObject screen in teacherScreens)
         {
             screen.SetActive(false);
         }
         isTeacherScreenEnabled = false;
-        currentTeacherScreenIndex = 0;
+        currentTeacherScreenIndex = -1;
     }
 
     private void LaunchTeacherDashboard()
@@ -113,6 +126,9 @@ public class InterfaceController : MonoBehaviour
         studentScreens[0].SetActive(true);
         isStudentScreenEnabled = true;
         currentStudentScreenIndex = 0;
+
+        // Trigger goals
+        AvatarController.Instance.StartConversation();
     }
 
     private void LoadARScene()
