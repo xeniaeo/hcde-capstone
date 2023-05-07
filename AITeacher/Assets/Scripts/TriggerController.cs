@@ -8,6 +8,7 @@ using Inworld;
 using Inworld.Model;
 using Inworld.Packets;
 using Inworld.Util;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,61 +27,51 @@ public class TriggerController : MonoBehaviour
     public UnityEvent OnTriggerSent;
     public UnityEvent OnTriggerReceived;
 
+    //-------------------------------------------------------------------------------------------- 
+    #region Singleton
+
+    // singleton implementation     
+    [NonSerialized]
+    private static TriggerController instance;
+    public static TriggerController Instance
+    {
+        get { return instance; }
+        private set { }
+    }
+
+    #endregion
+
+    //--------------------------------------------------------------------------------------------
+
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+
+            // if we change scenes but want this manager to stay around, uncomment this block: 
+            // re-parent to root because that's a requirement for DontDestroyOnLoad
+            // which is needed to stay persistent when a new scene is loaded
+            // gameObject.transform.SetParent(null);
+            // DontDestroyOnLoad(this);
+        }
+    }
+
     private void Start()
     {
         InworldController.Instance.OnPacketReceived += OnPacketEvents;
     }
 
-    private void Update()
+    public void TriggerActions(string trigger)
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SendTrigger("warning");
-            //OnTriggerSent.Invoke();
-            TriggerText.text = "warning";
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            SendTrigger("start_conversation");
-            TriggerText.text = "start_conversation";
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SendTrigger("good_job");
-            TriggerText.text = "good_job";
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            SendTrigger("start_questions");
-            TriggerText.text = "start_questions";
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SendTrigger("ask_questions");
-            TriggerText.text = "ask_questions";
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            SendTrigger("vocabularies");
-            TriggerText.text = "vocabularies";
-        }
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            SendTrigger("give_rewards");
-            TriggerText.text = "give_rewards";
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            SendTrigger("share_results");
-            TriggerText.text = "share_results"; 
-        }
+        SendTrigger(trigger);
+        // OnTriggerSent.Invoke();
+        TriggerText.text = trigger;
     }
 
     private void OnPacketEvents(InworldPacket packet)

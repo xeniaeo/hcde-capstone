@@ -23,7 +23,7 @@ MonoBehaviour:
   triggers: []
   scenes:
   - workspaces/xenia_capstone/scenes/classroom
-  modelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/36f843b6-e71b-4134-90af-36613bdf59aa.glb
-  posUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/36f843b6-e71b-4134-90af-36613bdf59aa_posture.jpg
-  previewImgUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/36f843b6-e71b-4134-90af-36613bdf59aa_portrait.jpg
+  modelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/808f5d41-66ef-47ee-82a6-a019cfb96ffe.glb
+  posUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/808f5d41-66ef-47ee-82a6-a019cfb96ffe_posture.jpg
+  previewImgUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/808f5d41-66ef-47ee-82a6-a019cfb96ffe_portrait.jpg
   characterID: 

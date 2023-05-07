@@ -374,6 +374,7 @@
 "Assets/Scripts/InterfaceController.cs"
 "Assets/Scripts/MouseLook.cs"
 "Assets/Scripts/TriggerController.cs"
+"Assets/Scripts/UIController.cs"
 -langversion:9.0
 
 /deterministic
