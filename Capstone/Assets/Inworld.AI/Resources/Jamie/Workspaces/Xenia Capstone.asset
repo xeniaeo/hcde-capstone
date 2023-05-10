@@ -16,7 +16,7 @@ MonoBehaviour:
   fullName: workspaces/xenia_capstone
   characters:
   - {fileID: 11400000, guid: 352e52fe749c9924ab54052e4cb4115e, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: af7c0e6857f967348aca57c1811d8284, type: 2}
   scenes:
   - {fileID: 11400000, guid: f94d5f9d67a36cd4d8c6ad36efd6583e, type: 2}
   integrations:

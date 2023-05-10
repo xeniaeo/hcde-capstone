@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
+  m_Name: Miss Reading_1
+  m_EditorClassIdentifier: 
+  characterName: Miss Reading
+  brain: workspaces/xenia_capstone/characters/miss_reading_copy
+  avatar: {fileID: 0}
+  workspace: workspaces/xenia_capstone
+  currentScene: workspaces/xenia_capstone/characters/miss_reading_copy
+  ownerShip: 0
+  defaultThumbnail: {fileID: 2800000, guid: 18e08a1178f14ca4ba1da9c181b7999e, type: 3}
+  index: 1
+  triggers: []
+  scenes:
+  - workspaces/xenia_capstone/scenes/classroom
+  modelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/8f0db5ca-7e81-4cdc-89ea-b391d94ba6d2.glb
+  posUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/8f0db5ca-7e81-4cdc-89ea-b391d94ba6d2_posture.jpg
+  previewImgUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/8f0db5ca-7e81-4cdc-89ea-b391d94ba6d2_portrait.jpg
+  characterID: 

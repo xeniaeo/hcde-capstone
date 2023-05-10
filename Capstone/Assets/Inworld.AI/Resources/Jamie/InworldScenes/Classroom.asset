@@ -18,5 +18,6 @@ MonoBehaviour:
     environment with adequate lights.
   characters:
   - workspaces/xenia_capstone/characters/ms_reading
+  - workspaces/xenia_capstone/characters/miss_reading_copy
   triggers: []
   index: 0
