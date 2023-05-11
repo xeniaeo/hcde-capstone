@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Dashboard.unity
+    guid: 31d647c08c69f7f4d900d251b77bd03a
+  - enabled: 1
+    path: Assets/Scenes/SilentRead.unity
+    guid: ef0e67a0554a335459db45e20ecf3a9b
+  - enabled: 1
+    path: Assets/Scenes/EmptyScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/VirtualTeacher.unity
+    guid: cc6a7a384d053db45a4bb46f3b09ad0b
   m_configObjects: {}
