@@ -17,12 +17,13 @@ public class SceneLoader : MonoBehaviour
 
     private void LoadReadAloudScene()
     {
-        //SceneManager.LoadScene("VirtualTeacher");
+        // SceneManager.LoadScene("VirtualTeacher");
         StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "VirtualTeacher"));
     }
 
     private void LoadSilentReadScene()
     {
-        SceneManager.LoadScene("SilentRead");
+        // SceneManager.LoadScene("SilentRead");
+        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "SilentRead"));
     }
 }
