@@ -10,7 +10,6 @@ public class UIController : MonoBehaviour
     public List<Sprite> BackgroundSpries = new List<Sprite>();
     public GameObject ChatCanvas;
     public GameObject TeacherAvatar;
-    public Button NextBtn;
 
     private Vector3 canvasPosNormal = new Vector3(0.01f, 0.26f, 1.0f);
     private Vector3 canvasPosUp = new Vector3(0.01f, 0.63f, 1.0f);
@@ -30,6 +29,11 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            TriggerNextFlow();
+        }
+
         // Quickly trigger specific flow for debugging purposes
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -95,15 +99,9 @@ public class UIController : MonoBehaviour
             chatCanvasRT.localPosition = canvasPosNormal;
             TriggerController.Instance.TriggerActions("give_rewards");
         }
-
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            chatCanvasRT.localPosition = canvasPosNormal;
-            TriggerController.Instance.TriggerActions("share_results"); 
-        }
     }
 
-    // Enter next flow through button click
+    // Enter next flow through pressing the right arrow key
     public void TriggerNextFlow()
     {
         Debug.Log(currentFlowIndex);
@@ -154,16 +152,12 @@ public class UIController : MonoBehaviour
                 chatCanvasRT.localPosition = canvasPosNormal;
                 TriggerController.Instance.TriggerActions("give_rewards");
                 break;
-            case(9):
-                chatCanvasRT.localPosition = canvasPosNormal;
-                TriggerController.Instance.TriggerActions("share_results");
-                break;
             default:
                 break;
         }
-        if (currentFlowIndex >= 0 && currentFlowIndex < 10)
+        if (currentFlowIndex >= 0 && currentFlowIndex < 9)
             currentFlowIndex += 1;
-        if (currentFlowIndex == 10)
+        if (currentFlowIndex == 9)
             currentFlowIndex = 0;
     }
 
