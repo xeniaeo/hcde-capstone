@@ -19,6 +19,11 @@ public class UIController : MonoBehaviour
     private int currentFlowIndex = 0;
     private Color transparentColor = new Color(0f, 0f, 0f, 0f);
 
+    // adding items to chat bubble scroll views
+    public RectTransform ChatContent;
+    public GameObject ChatBubble_goodJob;
+    public GameObject ChatBubble_whale;
+
     void Start()
     {
         if (TriggerController.Instance == null)
@@ -101,6 +106,7 @@ public class UIController : MonoBehaviour
                 break;
             case(3):
                 TriggerFlow(true, true, BackgroundSpries[3], TipBoxSprites[3], transparentColor, canvasPosNormal, "good_job");
+                // InstantiateCustomChatBubble(ChatBubble_goodJob); // todo: can I wait for the trigger to complete? (callback or wait for a bit with coroutine)
                 break;
             case(4):
                 TriggerFlow(true, true, BackgroundSpries[4], TipBoxSprites[4], Color.white, canvasPosNormal, "start_questions");
@@ -110,6 +116,7 @@ public class UIController : MonoBehaviour
                 break;
             case(6):
                 TriggerFlow(true, true, BackgroundSpries[6], TipBoxSprites[6], Color.white, canvasPosNormal, "");
+                // InstantiateCustomChatBubble(ChatBubble_whale);
                 break;
             case(7):
                 TriggerFlow(true, true, BackgroundSpries[7], TipBoxSprites[7], Color.white, canvasPosNormal, "vocabularies");
@@ -144,5 +151,13 @@ public class UIController : MonoBehaviour
 
         if (triggerString != "")
             TriggerController.Instance.TriggerActions(triggerString);
+    }
+
+    private void InstantiateCustomChatBubble(GameObject customBubble)
+    {
+        GameObject clone = Instantiate (customBubble);
+        clone.transform.SetParent(ChatContent, false);
+        ChatContent.sizeDelta = new Vector2(ChatContent.sizeDelta.x, ChatContent.sizeDelta.y + clone.GetComponent<RectTransform>().sizeDelta.y); // chatBubble height 90 + 20 = 110
+        // todo: fix content height
     }
 }

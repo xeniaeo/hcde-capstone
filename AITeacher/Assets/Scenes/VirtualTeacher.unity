@@ -217,6 +217,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 38.713, y: 167.381, z: 3.928}
+--- !u!224 &358206886 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1692005494, guid: 377a3199ab75de842bf039ecaaf6063f, type: 3}
+  m_PrefabInstance: {fileID: 926424937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &375521432 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 425627533, guid: 377a3199ab75de842bf039ecaaf6063f, type: 3}
@@ -686,6 +691,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 35fcb449e3f3acd4cbc77d554a1c69b9, type: 3}
   - {fileID: 21300000, guid: 31cccfc2083eec048b5202cb0e6570c5, type: 3}
   - {fileID: 0}
+  ChatContent: {fileID: 358206886}
+  ChatBubble_goodJob: {fileID: 8076421544860182734, guid: 0edbca8340891274c89d6c324022ffb0, type: 3}
 --- !u!4 &1663720619
 Transform:
   m_ObjectHideFlags: 0
@@ -851,6 +858,10 @@ PrefabInstance:
       propertyPath: Character
       value: 
       objectReference: {fileID: 1252951695}
+    - target: {fileID: 787405709965804730, guid: 88efedddeb833364b936424ce9f89d45, type: 3}
+      propertyPath: keywords.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 787405709965804708, guid: 88efedddeb833364b936424ce9f89d45, type: 3}
