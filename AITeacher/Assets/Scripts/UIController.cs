@@ -11,12 +11,13 @@ public class UIController : MonoBehaviour
     public GameObject ChatCanvas;
     public GameObject TeacherAvatar;
     public Image TipBoxUI;
-    public List<Sprite> TipBoxSpries = new List<Sprite>();
+    public List<Sprite> TipBoxSprites = new List<Sprite>();
 
     private Vector3 canvasPosNormal = new Vector3(0.01f, 0.034f, 1.0f);
     private Vector3 canvasPosUp = new Vector3(0.01f, 0.63f, 1.0f);
     private RectTransform chatCanvasRT;
     private int currentFlowIndex = 0;
+    private Color transparentColor = new Color(0f, 0f, 0f, 0f);
 
     void Start()
     {
@@ -39,137 +40,82 @@ public class UIController : MonoBehaviour
         // // [DEBUG-ONLY] Quickly trigger specific flow for debugging purposes. Only enable this for debugging and not for building.
         // if (Input.GetKeyDown(KeyCode.A))
         // {
-        //     BackgroundUI.sprite = BackgroundSpries[0];
-        //     TipBoxUI.sprite = TipBoxSpries[0];
-        //     chatCanvasRT.localPosition = canvasPosNormal;
-        //     TriggerController.Instance.TriggerActions("warning");
+        //     TriggerFlow(true, true, BackgroundSpries[0], TipBoxSprites[0], Color.white, canvasPosNormal, "warning");
         // }
 
         // if (Input.GetKeyDown(KeyCode.B))
         // {
-        //     BackgroundUI.sprite = BackgroundSpries[1];
-        //     TipBoxUI.sprite = TipBoxSpries[1];
-        //     chatCanvasRT.localPosition = canvasPosNormal;
-        //     TriggerController.Instance.TriggerActions("start_conversation");
+        //     TriggerFlow(true, true, BackgroundSpries[1], TipBoxSprites[1], Color.white, canvasPosNormal, "start_conversation");
         // }
 
         // if (Input.GetKeyDown(KeyCode.C))
         // {
-        //     // hide chat
-        //     ChatCanvas.SetActive(false);
-        //     TeacherAvatar.SetActive(false);
-        //     BackgroundUI.sprite = BackgroundSpries[2];
-        //     TipBoxUI.sprite = TipBoxSpries[2];
+        //     TriggerFlow(false, false, BackgroundSpries[2], TipBoxSprites[2], transparentColor, canvasPosNormal, "");
         // }
 
         // if (Input.GetKeyDown(KeyCode.D))
         // {
-        //     ChatCanvas.SetActive(true);
-        //     TeacherAvatar.SetActive(true);
-        //     BackgroundUI.sprite = BackgroundSpries[3];
-        //     TipBoxUI.sprite = TipBoxSpries[3];
-        //     chatCanvasRT.localPosition = canvasPosNormal;
-        //     TriggerController.Instance.TriggerActions("good_job");
+        //     TriggerFlow(true, true, BackgroundSpries[3], TipBoxSprites[3], transparentColor, canvasPosNormal, "good_job");
         // }
 
         // if (Input.GetKeyDown(KeyCode.E))
         // {
-        //     BackgroundUI.sprite = BackgroundSpries[4];
-        //     TipBoxUI.sprite = TipBoxSpries[4];
-        //     chatCanvasRT.localPosition = canvasPosNormal;
-        //     TriggerController.Instance.TriggerActions("start_questions");
+        //     TriggerFlow(true, true, BackgroundSpries[4], TipBoxSprites[4], Color.white, canvasPosNormal, "start_questions");
         // }
 
         // if (Input.GetKeyDown(KeyCode.F))
         // {
-        //     BackgroundUI.sprite = BackgroundSpries[5];
-        //     TipBoxUI.sprite = TipBoxSpries[5];
-        //     chatCanvasRT.localPosition = canvasPosNormal;
-        //     TriggerController.Instance.TriggerActions("ask_questions");
+        //     TriggerFlow(true, true, BackgroundSpries[5], TipBoxSprites[5], Color.white, canvasPosNormal, "ask_questions");
         // }
 
         // if (Input.GetKeyDown(KeyCode.G))
         // {
-        //     BackgroundUI.sprite = BackgroundSpries[6];
-        //     TipBoxUI.sprite = TipBoxSpries[6];
-        //     chatCanvasRT.localPosition = canvasPosNormal;
+        //     TriggerFlow(true, true, BackgroundSpries[6], TipBoxSprites[6], Color.white, canvasPosNormal, "");
         // }
 
         // if (Input.GetKeyDown(KeyCode.H))
         // {
-        //     BackgroundUI.sprite = BackgroundSpries[7];
-        //     TipBoxUI.sprite = TipBoxSpries[7];
-        //     chatCanvasRT.localPosition = canvasPosNormal;
-        //     TriggerController.Instance.TriggerActions("vocabularies");
+        //     TriggerFlow(true, true, BackgroundSpries[7], TipBoxSprites[7], Color.white, canvasPosNormal, "vocabularies");
         // }
 
         // if (Input.GetKeyDown(KeyCode.I))
         // {
-        //     BackgroundUI.sprite = BackgroundSpries[8];
-        //     TipBoxUI.sprite = TipBoxSpries[8];
-        //     chatCanvasRT.localPosition = canvasPosNormal;
-        //     TriggerController.Instance.TriggerActions("give_rewards");
+        //     TriggerFlow(true, true, BackgroundSpries[8], TipBoxSprites[8], transparentColor, canvasPosNormal, "give_rewards");
         // }
     }
 
     // Enter next flow through pressing the right arrow key
     public void TriggerNextFlow()
     {
-        Debug.Log(currentFlowIndex);
         switch(currentFlowIndex)
         {
             case(0):
                 StartCoroutine(EnterWarning());
                 break;
             case(1):
-                BackgroundUI.sprite = BackgroundSpries[1];
-                TipBoxUI.sprite = TipBoxSpries[1];
-                chatCanvasRT.localPosition = canvasPosNormal;
-                TriggerController.Instance.TriggerActions("start_conversation");
+                TriggerFlow(true, true, BackgroundSpries[1], TipBoxSprites[1], Color.white, canvasPosNormal, "start_conversation");
                 break;
             case(2):
                 // hide chat
-                ChatCanvas.SetActive(false);
-                TeacherAvatar.SetActive(false);
-                BackgroundUI.sprite = BackgroundSpries[2];
-                TipBoxUI.sprite = TipBoxSpries[2];
+                TriggerFlow(false, false, BackgroundSpries[2], TipBoxSprites[2], transparentColor, canvasPosNormal, "");
                 break;
             case(3):
-                ChatCanvas.SetActive(true);
-                TeacherAvatar.SetActive(true);
-                BackgroundUI.sprite = BackgroundSpries[3];
-                TipBoxUI.sprite = TipBoxSpries[3];
-                chatCanvasRT.localPosition = canvasPosNormal;
-                TriggerController.Instance.TriggerActions("good_job");
+                TriggerFlow(true, true, BackgroundSpries[3], TipBoxSprites[3], transparentColor, canvasPosNormal, "good_job");
                 break;
             case(4):
-                BackgroundUI.sprite = BackgroundSpries[4];
-                TipBoxUI.sprite = TipBoxSpries[4];
-                chatCanvasRT.localPosition = canvasPosNormal;
-                TriggerController.Instance.TriggerActions("start_questions");
+                TriggerFlow(true, true, BackgroundSpries[4], TipBoxSprites[4], Color.white, canvasPosNormal, "start_questions");
                 break;
             case(5):
-                BackgroundUI.sprite = BackgroundSpries[5];
-                TipBoxUI.sprite = TipBoxSpries[5];
-                chatCanvasRT.localPosition = canvasPosNormal;
-                TriggerController.Instance.TriggerActions("ask_questions");
+                TriggerFlow(true, true, BackgroundSpries[5], TipBoxSprites[5], Color.white, canvasPosNormal, "ask_questions");
                 break;
             case(6):
-                BackgroundUI.sprite = BackgroundSpries[6];
-                TipBoxUI.sprite = TipBoxSpries[6];
-                chatCanvasRT.localPosition = canvasPosNormal;
+                TriggerFlow(true, true, BackgroundSpries[6], TipBoxSprites[6], Color.white, canvasPosNormal, "");
                 break;
             case(7):
-                BackgroundUI.sprite = BackgroundSpries[7];
-                TipBoxUI.sprite = TipBoxSpries[7];
-                chatCanvasRT.localPosition = canvasPosNormal;
-                TriggerController.Instance.TriggerActions("vocabularies");
+                TriggerFlow(true, true, BackgroundSpries[7], TipBoxSprites[7], Color.white, canvasPosNormal, "vocabularies");
                 break;
             case(8):
-                BackgroundUI.sprite = BackgroundSpries[8];
-                TipBoxUI.sprite = TipBoxSpries[8];
-                chatCanvasRT.localPosition = canvasPosNormal;
-                TriggerController.Instance.TriggerActions("give_rewards");
+                TriggerFlow(true, true, BackgroundSpries[8], TipBoxSprites[8], transparentColor, canvasPosNormal, "give_rewards");
                 break;
             default:
                 break;
@@ -184,9 +130,19 @@ public class UIController : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         // Trigger the warning interface before the student starts
-        BackgroundUI.sprite = BackgroundSpries[0];
-        TipBoxUI.sprite = TipBoxSpries[0];
-        chatCanvasRT.localPosition = canvasPosNormal;
-        TriggerController.Instance.TriggerActions("warning");
+        TriggerFlow(true, true, BackgroundSpries[0], TipBoxSprites[0], Color.white, canvasPosNormal, "warning");
+    }
+
+    private void TriggerFlow(bool isChatActive, bool isAvatarActive, Sprite backgroundSprite, Sprite tipBoxSprite, Color tipBoxColor, Vector3 canvasPos, string triggerString)
+    {
+        ChatCanvas.SetActive(isChatActive);
+        TeacherAvatar.SetActive(isAvatarActive);
+        BackgroundUI.sprite = backgroundSprite;
+        TipBoxUI.color = tipBoxColor;
+        TipBoxUI.sprite = tipBoxSprite;
+        chatCanvasRT.localPosition = canvasPos;
+
+        if (triggerString != "")
+            TriggerController.Instance.TriggerActions(triggerString);
     }
 }

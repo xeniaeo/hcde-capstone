@@ -666,26 +666,26 @@ MonoBehaviour:
   BackgroundSpries:
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
+  - {fileID: 21300000, guid: 05e488c84cef4174b98d28f17f7c0405, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
-  - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
-  - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
+  - {fileID: 21300000, guid: f32d9a4fb1163bf44ba42b544ce00768, type: 3}
   ChatCanvas: {fileID: 375521432}
   TeacherAvatar: {fileID: 930719155}
   TipBoxUI: {fileID: 1283729224}
-  TipBoxSpries:
+  TipBoxSprites:
   - {fileID: 21300000, guid: 2b221a89a9d218c49855b0747f110af8, type: 3}
   - {fileID: 21300000, guid: ceb8e3c6e7527f448a3b2b2e5172c769, type: 3}
-  - {fileID: 21300000, guid: 2b221a89a9d218c49855b0747f110af8, type: 3}
-  - {fileID: 21300000, guid: 2b221a89a9d218c49855b0747f110af8, type: 3}
-  - {fileID: 21300000, guid: 2b221a89a9d218c49855b0747f110af8, type: 3}
-  - {fileID: 21300000, guid: 2b221a89a9d218c49855b0747f110af8, type: 3}
-  - {fileID: 21300000, guid: 2b221a89a9d218c49855b0747f110af8, type: 3}
-  - {fileID: 21300000, guid: 2b221a89a9d218c49855b0747f110af8, type: 3}
-  - {fileID: 21300000, guid: 2b221a89a9d218c49855b0747f110af8, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 92987a83303fec143b0bb3f85e80faed, type: 3}
+  - {fileID: 21300000, guid: 35fcb449e3f3acd4cbc77d554a1c69b9, type: 3}
+  - {fileID: 21300000, guid: 35fcb449e3f3acd4cbc77d554a1c69b9, type: 3}
+  - {fileID: 21300000, guid: 31cccfc2083eec048b5202cb0e6570c5, type: 3}
+  - {fileID: 0}
 --- !u!4 &1663720619
 Transform:
   m_ObjectHideFlags: 0
