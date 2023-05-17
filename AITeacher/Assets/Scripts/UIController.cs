@@ -134,13 +134,16 @@ public class UIController : MonoBehaviour
                 TriggerFlow(true, true, BackgroundSpries[8], TipBoxSprites[8], transparentColor, HeaderSprites[2], canvasPosNormal, "give_rewards");
                 StartCoroutine(DelayedCallback(12.0f, () => InstantiateCustomChatBubble(ChatBubble_badge)));
                 break;
+            case(9):
+                // add a case here before gling back to main dashboard to allow previous case to finish
+                break;
             default:
                 break;
         }
-        if (currentFlowIndex >= 0 && currentFlowIndex < 9)
+        if (currentFlowIndex >= 0 && currentFlowIndex < 10)
             currentFlowIndex += 1;
-        if (currentFlowIndex == 9)
-            currentFlowIndex = 0;
+        if (currentFlowIndex == 10)
+            LoadDashboard();
     }
 
     IEnumerator EnterWarning()
@@ -194,6 +197,12 @@ public class UIController : MonoBehaviour
     {
         yield return new WaitForSeconds(delaySeconds);
         callback.Invoke();
+    }
+
+    private void LoadDashboard()
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene("Dashboard");
     }
 
     private void DestroyChildren(Transform parent)
