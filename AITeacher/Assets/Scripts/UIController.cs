@@ -117,18 +117,18 @@ public class UIController : MonoBehaviour
                 StartCoroutine(DelayedCallback(12.0f, () => InstantiateCustomChatBubble(ChatBubble_goodJob)));
                 break;
             case(4):
-                TriggerFlow(true, true, BackgroundSpries[4], TipBoxSprites[4], Color.white, HeaderSprites[1], canvasPosNormal, "start_questions");
-                break;
-            case(5):
-                TriggerFlow(true, true, BackgroundSpries[5], TipBoxSprites[5], Color.white, HeaderSprites[1], canvasPosNormal, "ask_questions");
-                break;
-            case(6):
-                TriggerFlow(true, true, BackgroundSpries[6], TipBoxSprites[6], Color.white, HeaderSprites[1], canvasPosNormal, "");
-                StartCoroutine(DelayedCallback(2.0f, () => InstantiateCustomChatBubble(ChatBubble_whale)));
-                break;
-            case(7):
                 TriggerFlow(true, true, BackgroundSpries[7], TipBoxSprites[7], Color.white, HeaderSprites[1], canvasPosNormal, "vocabularies");
                 StartCoroutine(DelayedCallback(12.0f, () => InstantiateCustomChatBubble(ChatBubble_vocabulary)));
+                break;
+            case(5):
+                TriggerFlow(true, true, BackgroundSpries[4], TipBoxSprites[4], Color.white, HeaderSprites[1], canvasPosNormal, "start_questions");
+                break;
+            case(6):
+                TriggerFlow(true, true, BackgroundSpries[5], TipBoxSprites[5], Color.white, HeaderSprites[1], canvasPosNormal, "ask_questions");
+                break;
+            case(7):
+                TriggerFlow(true, true, BackgroundSpries[6], TipBoxSprites[6], Color.white, HeaderSprites[1], canvasPosNormal, "");
+                StartCoroutine(DelayedCallback(2.0f, () => InstantiateCustomChatBubble(ChatBubble_whale)));
                 break;
             case(8):
                 TriggerFlow(true, true, BackgroundSpries[8], TipBoxSprites[8], transparentColor, HeaderSprites[2], canvasPosNormal, "give_rewards");
