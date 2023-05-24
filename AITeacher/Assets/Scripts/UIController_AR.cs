@@ -11,6 +11,19 @@ public class UIController_AR : MonoBehaviour
     void Start()
     {
         LoadDashboardBtn.onClick.AddListener(LoadDashboard);
+
+        if (TriggerController.Instance == null)
+        {
+            Debug.LogError("TriggerController can not be null");
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            TriggerController.Instance.TriggerActions("just_chat");
+        }
     }
 
     private void LoadDashboard()
