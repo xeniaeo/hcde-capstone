@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     public List<Sprite> TipBoxSprites = new List<Sprite>();
     public Image HeaderUI;
     public List<Sprite> HeaderSprites = new List<Sprite>();
+    public Button LoadARBtn;
 
     private Vector3 canvasPosNormal = new Vector3(0.01f, 0.12f, 1.0f);
     private Vector3 canvasPosUp = new Vector3(0.01f, 0.63f, 1.0f);
@@ -23,6 +24,7 @@ public class UIController : MonoBehaviour
 
     // adding custom bubbles
     // public RectTransform ChatContent;
+    [Header("Custom bubbles")]
     public GameObject CustomBubbleCanvas;
     public RectTransform CustomBubbleContent;
     public GameObject ChatBubble_goodJob;
@@ -32,11 +34,14 @@ public class UIController : MonoBehaviour
 
     void Start()
     {
+        // TriggerController sends the trigger strings to the AI avatar. It can not be null.
         if (TriggerController.Instance == null)
         {
-            Debug.LogError("TriggerController is null");
+            Debug.LogError("TriggerController can not be null");
         }
+
         chatCanvasRT = ChatCanvas.GetComponent<RectTransform>();
+        LoadARBtn.onClick.AddListener(LoadARMode);
 
         TriggerNextFlow();
     }
@@ -51,49 +56,6 @@ public class UIController : MonoBehaviour
         // // [DEBUG-ONLY] Quickly trigger specific flow for debugging purposes. Only enable this for debugging and not for building.
         // if (Input.GetKeyDown(KeyCode.A))
         // {
-        //     TriggerFlow(true, true, BackgroundSpries[0], TipBoxSprites[0], Color.white, canvasPosNormal, "warning");
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.B))
-        // {
-        //     TriggerFlow(true, true, BackgroundSpries[1], TipBoxSprites[1], Color.white, canvasPosNormal, "start_conversation");
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.C))
-        // {
-        //     TriggerFlow(false, false, BackgroundSpries[2], TipBoxSprites[2], transparentColor, canvasPosNormal, "");
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.D))
-        // {
-        //     TriggerFlow(true, true, BackgroundSpries[3], TipBoxSprites[3], transparentColor, canvasPosNormal, "good_job");
-        //     StartCoroutine(DelayedCallback(10.0f, () => InstantiateCustomChatBubble(ChatBubble_goodJob)));
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.E))
-        // {
-        //     TriggerFlow(true, true, BackgroundSpries[4], TipBoxSprites[4], Color.white, canvasPosNormal, "start_questions");
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.F))
-        // {
-        //     TriggerFlow(true, true, BackgroundSpries[5], TipBoxSprites[5], Color.white, canvasPosNormal, "ask_questions");
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.G))
-        // {
-        //     TriggerFlow(true, true, BackgroundSpries[6], TipBoxSprites[6], Color.white, canvasPosNormal, "");
-        //     StartCoroutine(DelayedCallback(2.0f, () => InstantiateCustomChatBubble(ChatBubble_whale)));
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.H))
-        // {
-        //     TriggerFlow(true, true, BackgroundSpries[7], TipBoxSprites[7], Color.white, canvasPosNormal, "vocabularies");
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.I))
-        // {
-        //     TriggerFlow(true, true, BackgroundSpries[8], TipBoxSprites[8], transparentColor, canvasPosNormal, "give_rewards");
         // }
     }
 
@@ -203,6 +165,12 @@ public class UIController : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene("Dashboard");
+    }
+
+    private void LoadARMode()
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene("ARMode");
     }
 
     private void DestroyChildren(Transform parent)
