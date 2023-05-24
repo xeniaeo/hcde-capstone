@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     public Image HeaderUI;
     public List<Sprite> HeaderSprites = new List<Sprite>();
     public Button LoadARBtn;
+    public GameObject FocusModeParagraph;
 
     private Vector3 canvasPosNormal = new Vector3(0.01f, 0.12f, 1.0f);
     private Vector3 canvasPosUp = new Vector3(0.01f, 0.63f, 1.0f);
@@ -73,8 +74,10 @@ public class UIController : MonoBehaviour
             case(2):
                 // hide chat
                 TriggerFlow(false, false, BackgroundSpries[2], TipBoxSprites[2], transparentColor, null, canvasPosNormal, "");
+                FocusModeParagraph.SetActive(true);
                 break;
             case(3):
+                FocusModeParagraph.SetActive(false);
                 TriggerFlow(true, true, BackgroundSpries[3], TipBoxSprites[3], transparentColor, HeaderSprites[1], canvasPosNormal, "good_job");
                 StartCoroutine(DelayedCallback(12.0f, () => InstantiateCustomChatBubble(ChatBubble_goodJob)));
                 break;
