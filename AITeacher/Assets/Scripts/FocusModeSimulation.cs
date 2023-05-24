@@ -7,6 +7,7 @@ public class FocusModeSimulation : MonoBehaviour
 {
     public RectTransform HighlightBoxRT;
     public GameObject[] TextByLine;
+    public GameObject NonFocusModeParagraph;
     
     // Saving positions and width for moving the highlight box across the paragraph, word by word
     // These two arrays must aligns in terms of which word is being highlighted
@@ -30,6 +31,14 @@ public class FocusModeSimulation : MonoBehaviour
         MoveHighlightBox(highlightPos[wordIndex], highlightWidth[wordIndex]);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            ToggleNonFocusMode();
+        }
+    }
+
     private void MoveHighlightBox(Vector2 pos, int width)
     {
         HighlightBoxRT.localPosition = new Vector3(pos.x, pos.y, 0);
@@ -39,6 +48,7 @@ public class FocusModeSimulation : MonoBehaviour
         switch(pos.y)
         {
             case(445):
+                TextByLine[7].SetActive(false);
                 TextByLine[0].SetActive(true);
                 break;
             case(350):
@@ -77,14 +87,23 @@ public class FocusModeSimulation : MonoBehaviour
         if (wordIndex < highlightPos.Length - 1)
         {
             wordIndex += 1;
-            StartCoroutine(DelayedCallback(0.5f, () => MoveHighlightBox(highlightPos[wordIndex], highlightWidth[wordIndex])));
         }
+        else if (wordIndex == highlightPos.Length - 1)
+        {
+            wordIndex = 0;
+        }
+        StartCoroutine(DelayedCallback(0.5f, () => MoveHighlightBox(highlightPos[wordIndex], highlightWidth[wordIndex])));
     }
 
     private IEnumerator DelayedCallback(float delaySeconds, System.Action callback)
     {
         yield return new WaitForSeconds(delaySeconds);
         callback.Invoke();
+    }
+
+    private void ToggleNonFocusMode()
+    {
+        NonFocusModeParagraph.SetActive(!NonFocusModeParagraph.activeSelf);
     }
 }
 
