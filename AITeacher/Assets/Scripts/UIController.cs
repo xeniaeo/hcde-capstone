@@ -75,7 +75,7 @@ public class UIController : MonoBehaviour
             case(2):
                 // hide chat
                 TriggerFlow(false, false, BackgroundSpries[2], TipBoxSprites[2], transparentColor, null, canvasPosNormal, "");
-                FocusModeParagraph.SetActive(true);
+                StartCoroutine(DelayedCallback(3.0f, () => { FocusModeParagraph.SetActive(true); }));
                 break;
             case(3):
                 FocusModeParagraph.SetActive(false);
@@ -161,9 +161,9 @@ public class UIController : MonoBehaviour
         CustomBubbleContent.sizeDelta = new Vector2(CustomBubbleContent.sizeDelta.x, CustomBubbleContent.sizeDelta.y + clone.GetComponent<RectTransform>().sizeDelta.y);
 
         RectTransform cloneRT = clone.gameObject.GetComponent<RectTransform>();
-        cloneRT.DOSizeDelta(new Vector2(cloneRT.sizeDelta.x + 50.0f, cloneRT.sizeDelta.y + 50.0f), 0.5f).SetEase(Ease.OutQuad).OnComplete(
+        cloneRT.DOSizeDelta(new Vector2(cloneRT.sizeDelta.x + 0.0f, cloneRT.sizeDelta.y + 50.0f), 0.5f).SetEase(Ease.OutQuad).OnComplete(
             () => {
-                cloneRT.DOSizeDelta(new Vector2(cloneRT.sizeDelta.x - 50.0f, cloneRT.sizeDelta.y - 50.0f), 0.8f).SetEase(Ease.OutQuad);
+                cloneRT.DOSizeDelta(new Vector2(cloneRT.sizeDelta.x - 0.0f, cloneRT.sizeDelta.y - 50.0f), 0.8f).SetEase(Ease.OutQuad);
             }
         );
     }

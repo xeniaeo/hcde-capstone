@@ -48,7 +48,7 @@ MonoBehaviour:
   BackgroundSpries:
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
-  - {fileID: 21300000, guid: 05e488c84cef4174b98d28f17f7c0405, type: 3}
+  - {fileID: 21300000, guid: 16146d4aac19d02489271f64952413e2, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
   - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
@@ -73,6 +73,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c264850187ab62240986b68fa4902457, type: 3}
   - {fileID: 21300000, guid: 2dc97ace75984ec4f882ad41dcdaccbb, type: 3}
   - {fileID: 21300000, guid: d05beac631d97974ca3feb68834fc431, type: 3}
+  LoadARBtn: {fileID: 0}
+  FocusModeParagraph: {fileID: 0}
   CustomBubbleCanvas: {fileID: 0}
   CustomBubbleContent: {fileID: 0}
   ChatBubble_goodJob: {fileID: 8076421544860182734, guid: 0edbca8340891274c89d6c324022ffb0, type: 3}
