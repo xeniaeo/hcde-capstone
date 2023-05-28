@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class UIController : MonoBehaviour
 {
@@ -131,6 +132,13 @@ public class UIController : MonoBehaviour
             HeaderUI.color = transparentColor;
         chatCanvasRT.localPosition = canvasPos;
 
+        // Add animation for tip box
+        TipBoxUI.transform.DOMove(new Vector3(TipBoxUI.transform.position.x, TipBoxUI.transform.position.y + 15f, TipBoxUI.transform.position.z), 0.6f).SetEase(Ease.OutQuad).OnComplete(
+            () => {
+                TipBoxUI.transform.DOMove(new Vector3(TipBoxUI.transform.position.x, TipBoxUI.transform.position.y - 15f, TipBoxUI.transform.position.z), 1f).SetEase(Ease.OutQuad);
+            }
+        );
+
         if (triggerString != "")
         {
             HideCustomBubbleCanvas();
@@ -151,6 +159,13 @@ public class UIController : MonoBehaviour
         GameObject clone = Instantiate (customBubble);
         clone.transform.SetParent(CustomBubbleContent, false);
         CustomBubbleContent.sizeDelta = new Vector2(CustomBubbleContent.sizeDelta.x, CustomBubbleContent.sizeDelta.y + clone.GetComponent<RectTransform>().sizeDelta.y);
+
+        RectTransform cloneRT = clone.gameObject.GetComponent<RectTransform>();
+        cloneRT.DOSizeDelta(new Vector2(cloneRT.sizeDelta.x + 50.0f, cloneRT.sizeDelta.y + 50.0f), 0.5f).SetEase(Ease.OutQuad).OnComplete(
+            () => {
+                cloneRT.DOSizeDelta(new Vector2(cloneRT.sizeDelta.x - 50.0f, cloneRT.sizeDelta.y - 50.0f), 0.8f).SetEase(Ease.OutQuad);
+            }
+        );
     }
 
     private void HideCustomBubbleCanvas()

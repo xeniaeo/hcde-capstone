@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: workspaces/xenia_capstone/scenes/classroom
   shortName: Classroom
-  description: It is a room full of books, and some fun toys around. It is an encouraging
-    environment with adequate lights.
+  description: Everything the user sees is on the laptop screen. It's an environment
+    that is meant to encourage reading. The hand icon to ask for help from school
+    teacher is located on the top left of the screen.
   characters:
   - workspaces/xenia_capstone/characters/miss_reading
   - workspaces/xenia_capstone/characters/sophie_storybook
