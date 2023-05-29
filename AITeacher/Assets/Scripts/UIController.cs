@@ -55,6 +55,11 @@ public class UIController : MonoBehaviour
             TriggerNextFlow();
         }
 
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            TriggerController.Instance.TriggerActions("stop_talking"); // trying to force stop the conversation but this doesn't seem to work
+        }
+
         // // [DEBUG-ONLY] Quickly trigger specific flow for debugging purposes. Only enable this for debugging and not for building.
         // if (Input.GetKeyDown(KeyCode.A))
         // {
@@ -114,7 +119,7 @@ public class UIController : MonoBehaviour
 
     IEnumerator EnterWarning()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         // Trigger the warning interface before the student starts
         TriggerFlow(true, true, BackgroundSpries[0], TipBoxSprites[0], Color.white, HeaderSprites[0], canvasPosNormal, "warning");
     }

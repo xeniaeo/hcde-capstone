@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 3005782772878028202}
   - component: {fileID: 3667551478523131390}
   - component: {fileID: 3364394929633695711}
+  - component: {fileID: 2199980840780503730}
   m_Layer: 5
   m_Name: BubbleLeft
   m_TagString: Untagged
@@ -498,6 +499,26 @@ MonoBehaviour:
   m_TextField: {fileID: 7232472377049576432}
   m_Icon: {fileID: 1310471025517449045}
   m_CharacterName: {fileID: 7137626477981198309}
+--- !u!95 &2199980840780503730
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076421544860182734}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6cb0cf7af6d9c4b4080a3d2b699d1bd4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8971756232678144389
 GameObject:
   m_ObjectHideFlags: 0
