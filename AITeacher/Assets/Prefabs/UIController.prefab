@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6613707703711955296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6613707703711955298}
+  - component: {fileID: 6613707703711955299}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6613707703711955298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613707703711955296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6613707703711955299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613707703711955296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35daf1627a07774479e55b0883cc80e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackgroundUI: {fileID: 0}
+  BackgroundSpries:
+  - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
+  - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
+  - {fileID: 21300000, guid: 16146d4aac19d02489271f64952413e2, type: 3}
+  - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
+  - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
+  - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
+  - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
+  - {fileID: 21300000, guid: 5e1ef67ca138f4e449c0d8cdd749c85b, type: 3}
+  - {fileID: 21300000, guid: f32d9a4fb1163bf44ba42b544ce00768, type: 3}
+  ChatCanvas: {fileID: 0}
+  TeacherAvatar: {fileID: 0}
+  TipBoxUI: {fileID: 0}
+  TipBoxSprites:
+  - {fileID: 21300000, guid: 2b221a89a9d218c49855b0747f110af8, type: 3}
+  - {fileID: 21300000, guid: ceb8e3c6e7527f448a3b2b2e5172c769, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 92987a83303fec143b0bb3f85e80faed, type: 3}
+  - {fileID: 21300000, guid: 35fcb449e3f3acd4cbc77d554a1c69b9, type: 3}
+  - {fileID: 21300000, guid: 35fcb449e3f3acd4cbc77d554a1c69b9, type: 3}
+  - {fileID: 21300000, guid: 31cccfc2083eec048b5202cb0e6570c5, type: 3}
+  - {fileID: 0}
+  HeaderUI: {fileID: 0}
+  HeaderSprites:
+  - {fileID: 21300000, guid: c264850187ab62240986b68fa4902457, type: 3}
+  - {fileID: 21300000, guid: 2dc97ace75984ec4f882ad41dcdaccbb, type: 3}
+  - {fileID: 21300000, guid: d05beac631d97974ca3feb68834fc431, type: 3}
+  LoadARBtn: {fileID: 0}
+  FocusModeParagraph: {fileID: 0}
+  CustomBubbleCanvas: {fileID: 0}
+  CustomBubbleContent: {fileID: 0}
+  ChatBubble_goodJob: {fileID: 8076421544860182734, guid: 0edbca8340891274c89d6c324022ffb0, type: 3}
+  ChatBubble_whale: {fileID: 8076421544860182734, guid: 7a94676e263707c4fab3327cd26f6b37, type: 3}
+  ChatBubble_vocabulary: {fileID: 8076421544860182734, guid: b1bdf6184bf7b8d4ea4223897351e63f, type: 3}
+  ChatBubble_badge: {fileID: 8076421544860182734, guid: 9cab2da088fd3944c993bcafd8c9d362, type: 3}

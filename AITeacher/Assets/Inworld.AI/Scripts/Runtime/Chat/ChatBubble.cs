@@ -46,7 +46,7 @@ namespace Inworld.Sample.UI
         /// <summary>
         ///     Get the bubble's height.
         /// </summary>
-        public float Height => GetComponent<RectTransform>().sizeDelta.y + 20;
+        public float Height => GetComponent<RectTransform>().sizeDelta.y;
         /// <summary>
         ///     Get/Set the bubble's speaker's name.
         /// </summary>

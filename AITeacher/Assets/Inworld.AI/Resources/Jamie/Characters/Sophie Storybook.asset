@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
+  m_Name: Sophie Storybook
+  m_EditorClassIdentifier: 
+  characterName: Sophie Storybook
+  brain: workspaces/xenia_capstone/characters/sophie_storybook
+  avatar: {fileID: 0}
+  workspace: workspaces/xenia_capstone
+  currentScene: workspaces/xenia_capstone/characters/sophie_storybook
+  ownerShip: 0
+  defaultThumbnail: {fileID: 2800000, guid: d7d1cb038ddb94b4b844b5fddbe8132b, type: 3}
+  index: 0
+  triggers: []
+  scenes:
+  - workspaces/xenia_capstone/scenes/classroom
+  modelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/808f5d41-66ef-47ee-82a6-a019cfb96ffe.glb
+  posUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/808f5d41-66ef-47ee-82a6-a019cfb96ffe_posture.jpg
+  previewImgUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/808f5d41-66ef-47ee-82a6-a019cfb96ffe_portrait.jpg
+  characterID: f251547f-1214-4b08-91b7-d84c6e82bc06

@@ -125,6 +125,7 @@ namespace Inworld.Sample
         void _SetContentHeight()
         {
             float fHeight = m_Bubbles.Values.Sum(bubble => bubble.Height);
+            // float fHeight = m_Bubbles.Values.Where(bubble => bubble != null).Sum(bubble => bubble.Height);
             m_ContentRT.sizeDelta = new Vector2(m_ContentRT.sizeDelta.x, fHeight);
         }
         #endregion

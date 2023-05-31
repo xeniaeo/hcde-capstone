@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Behind3D
+    uniqueID: 144665619
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 3D
+    uniqueID: 4199893017
     locked: 0
